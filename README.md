@@ -12,7 +12,7 @@ This project is a fully responsive website developed using Pug (template engine)
 ![mobail](img/Screenshot-mobail.png)
 
 ### mobail slaider 
-![mobail slaider] (img/Screenshot-mobai-slaider.png)
+![mobail slaider](img/Screenshot-mobai-slaider.png)
 
 ## 🟢 Live Demo
 View the website online:  
