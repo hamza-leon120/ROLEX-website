@@ -7,7 +7,7 @@ This project is a fully responsive website developed using Pug (template engine)
 - Vanilla JavaScript (interactivity)
 - Theme Switch (light/dark) 
 - Responsive Design  
--Font Awesome (icons)
+- Font Awesome (icons)
 
 ## 🟢 Live Demo
 View the website online:  
