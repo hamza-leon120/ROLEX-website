@@ -1,5 +1,18 @@
 # ROLEX-website
 This project is a fully responsive website developed using Pug (template engine), SCSS (modular styling), and vanilla JavaScript. The code follows clean architecture principles, using mixins, variables, and reusable UI components. It includes custom animations, responsive layout adjustments, and a dynamic theme-switching system.
+
+## 🛠️Tech Stack
+- Pug (templating)
+- SCSS (styling)
+- Vanilla JavaScript (interactivity)
+- Theme Switch (light/dark) 
+- Responsive Design  
+-Font Awesome (icons)
+
+## 🟢 Live Demo
+View the website online:  
+👉 https://hamza-leon120.github.io/ROLEX-website/
+
 ## 📸 Screenshots
 
 ### 🌞 Light Mode
@@ -14,6 +27,9 @@ This project is a fully responsive website developed using Pug (template engine)
 ### mobail slaider 
 ![mobail slaider](img/Screenshot-mobai-slaider.png)
 
-## 🟢 Live Demo
-View the website online:  
-👉 https://hamza-leon120.github.io/ROLEX-website/
+## ✨ Features  
+- Fully responsive design (mobile / tablet / desktop)  
+- Light / Dark theme toggle (persistent across sessions)  
+- Product grid, featured products, new arrivals, testimonials, newsletter section, etc.  
+- Clean, modular SCSS using variables & mixins  
+- Vanilla JS for interactivity: theme toggle, mobile menu, “scroll to top” button, card hover states, testimonial slider  
