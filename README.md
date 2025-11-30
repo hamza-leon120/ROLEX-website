@@ -1,7 +1,7 @@
 # ROLEX-website
 This project is a fully responsive website developed using Pug (template engine), SCSS (modular styling), and vanilla JavaScript. The code follows clean architecture principles, using mixins, variables, and reusable UI components. It includes custom animations, responsive layout adjustments, and a dynamic theme-switching system.
 
-## 🛠️Tech Stack
+## 🛠️🧰 Tech Stack
 - Pug (templating)
 - SCSS (styling)
 - Vanilla JavaScript (interactivity)
@@ -32,4 +32,10 @@ View the website online:
 - Light / Dark theme toggle (persistent across sessions)  
 - Product grid, featured products, new arrivals, testimonials, newsletter section, etc.  
 - Clean, modular SCSS using variables & mixins  
-- Vanilla JS for interactivity: theme toggle, mobile menu, “scroll to top” button, card hover states, testimonial slider  
+- Vanilla JS for interactivity: theme toggle, mobile menu, “scroll to top” button, card hover states, testimonial slider
+
+## 🛠️ How to Run Locally
+```bash
+git clone https://github.com/hamza-leon120/ROLEX-website.git
+cd ROLEX-website
+open index.html
