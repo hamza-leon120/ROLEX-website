@@ -1,0 +1,116 @@
+include ./include/include.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        // style
+        link(rel="stylesheet", href="./scss/style.css")
+        // icon
+        link(rel="stylesheet", href="./scss/all.min.css")
+        // normalize
+        link(rel="stylesheet", href="./scss/normalize.css")
+        // font 
+        link(rel='preconnect' href='https://fonts.googleapis.com')
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet')
+    body 
+        header 
+            .container
+                .first 
+                    .logo 
+                        p ROLEX
+                    .side-bar 
+                        ul 
+                            li: a(href="#") Home
+                            li: a(href="#") Featured
+                            li: a(href="#") Products
+                            li: a(href="#") New
+                .secound 
+                    i(class = "fa-regular fa-moon")
+                    i(class = "fa-solid fa-bag-shopping")
+                    i(class = "fa-solid fa-bars")
+        section(class = "hero")
+            .container 
+                .first
+                    h1 NEW WATCH COLLECTIONS B720
+                    p Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.
+                    p $1245
+                    div 
+                        +button("Discover")
+                        +button("ADD TO CART")
+                .secound 
+                    img(src="./img/home-1.jpg", alt="A luxurious black and gold wristwatch with visible mechanical gears, Roman numerals, and intricate details")
+        section(class = "featured")
+            .container
+                .first 
+                    +title("FEATURED")
+                .card-grid
+                    +card("card active","./img/featured-1.jpg","A luxurious wristwatch with a rose gold case and black leather strap.","JAZZMASTER","$1050")
+                    +card("card","./img/featured-2.jpg","Elegant brown watch with a leather strap and rose gold accents. ","INGERSOLL","$250")
+                    +card("card","./img/featured-3.jpg","Elegant wristwatch with a black face, silver markers, and sub-dials. Gold casing with a black leather strap,","ROSE GOLD","$890")
+        section(class = "story")
+            .container 
+                .first 
+                    div 
+                        img(src="./img/story-1.jpg", alt="A stylish analog wristwatch with a brown leather strap, brown face, and silver indices on a black bezel. ")
+                .secound 
+                    +title("OUR STORY")
+                    p Inspirational Watch of this year
+                    p The latest and modern watches of this year, is available in various presentations in this store, discover them now.
+                    +button("Discover")
+        section(class = "products")
+            .container
+                +title("PRODUCTS")
+                .product-grid
+                    +products("./img/product-1.jpg","Elegant wristwatch with a black leather strap and a gold-tone case. The black dial features three subdials, silver accents, and a date window,","SPIRIT ROSE","$1500")
+                    +products("./img/product-2.jpg","Silver wristwatch with a black leather strap, featuring a white dial, large numerals, and a day-date display","KHAKI PILOT","$1350")
+                    +products("./img/product-3.jpg","A classic wristwatch with a dark leather strap and rose gold casing.","JUBILEE BLACK","$870")
+                    +products("./img/product-4.jpg","Elegant wristwatch with a dark face, Roman numerals, a small subdial, and exposed gears. Brown leather strap","FOSIL ME3","$650")
+                    +products("./img/product-5.jpg","Elegant wristwatch with a silver dial, textured pattern, Roman numerals, and a date window. Features black leather strap,","DUCHEN","$950")
+        section(class = "testimonial")
+            .container 
+                .all
+                    .alll
+                        +all("March 27. 2021","./img/testimonial.jpg","A black-and-white portrait of a man with a beard and wavy hair gazing to the left. He wears a jacket over a T-shir","Lee Doe","Director of a company")
+                        +all("March 8. 2023","./img/testimonial2.jpg","a woman with long brown hair, wearing a neutral expression","Samantha Mey","Director of a company")
+                        +all("March 7. 2022","./img/testimonial3.jpg","a man with short dark hair and a well-groomed beard, wearing a light gray V-neck shirt. He’s smiling softly","Raul Zaman","Director of a company")
+                    .arrow 
+                        .left 
+                            i(class = "fa-solid fa-arrow-left")
+                        .right 
+                            i(class = "fa-solid fa-arrow-right")
+                .secound 
+                    img(src="./img/testimonial-2.jpg", alt="A close-up of a person wearing an elegant wristwatch with a gold skeleton dial and brown leather strap. The watch is paired with a navy suit, showcasing sophistication.")
+        section(class ="new")
+            .container 
+                +title("NEW ARRIVALS")
+                .item-grid 
+                    +item("item","./img/item-1.jpg","A luxury wristwatch with a black dial, gold-tone bezel, and chronograph features. It has a black leather strap and a sophisticated","LONGINES ROSE","$980")
+                    +item("item active","./img/item-2.jpg","Elegant wristwatch with a black leather strap, rose gold casing, and a black dial featuring three silver sub-dials","JAZZMASTER","$1150")
+                    +item("item","./img/item-3.jpg","A sleek wristwatch with a silver face, gold casing, and black leather strap. It features minimalistic hour markers, a date display","DREYFUSS GOLD","$750")
+                    +item("item","./img/item-4.jpg","A sophisticated wristwatch featuring a rose gold case, black dial with gold numerals, two subdials, date display, and a black leather strap. ","PORTUGUESE","$1590")
+        section(class="newsletter")
+            .container 
+                .first 
+                    h2 Subscribe Our Newsletter
+                    p Don't miss out on your discounts. Subscribe to our email newsletter to get the best offers, discounts, coupons, gifts and much more.
+                .secound 
+                    input(type="text" placeholder = "Enter your email")
+                    +button("SUBSCRIBE")
+        footer
+            .container 
+                +list("Our information","1234 - Peru","La Libertad 43210","123-456-789","")
+                +list("About Us","Support Center","Customer Support","About Us","Copy Right")
+                +list("Product","Road bikes","Mountain bikes","Electric","Accesories")
+                ul 
+                    li Social
+                    li: i(class= "fa-brands fa-facebook-f")
+                    li: i(class= "fa-brands fa-twitter")
+                    li: i(class= "fa-brands fa-instagram")
+        .up-button 
+            i(class = "fa-solid fa-arrow-up")
+        script(src="./main.js") 
+
+

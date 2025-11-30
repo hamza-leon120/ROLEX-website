@@ -1,0 +1,733 @@
+@use './layout/latout';
+@use "./mixin/mixin" as *;
+@use "./var/_var.scss" as * ;
+
+:root {
+    --color-back: #FCFCFC;
+    --color-one: #2E2E2E ;
+    --color-two: #FFB568 ;
+    --color-three: #595959 ;
+    --color-four: #FFFFFF ;
+    --color-five: #F0F0F0 ;
+    --color-six: #2B2B2B ;
+}
+
+.dark {
+    --color-back: #1F1F1F;
+    --color-one: #F2F2F2  ;
+    --color-two: #EFBE8A  ;
+    --color-three: #BFBFBF ;
+    --color-four: #292929 ;
+    --color-five: #333333  ;
+    --color-six: #3D3D3D ;
+}
+
+header {
+    .container {
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .first {
+            display: flex;
+            .logo {
+                margin-right: 62px;
+                @include medai(mobail){
+                    position: relative;
+                    z-index: 100000;
+                }
+                p {
+                    color: var(--color-one);
+                    font: {
+                        size: 16px;
+                        weight: bold ;
+                    }
+                }
+            }
+            .side-bar {
+                ul {
+                    list-style: none;
+                    li {
+                        display: inline-block;
+                        margin-right: 40px;
+                        &:first-child {
+                            a {
+                                color: var(--color-two);
+                            }
+                        }
+                        a {
+                            text-decoration: none;
+                            color: var(--color-three);
+                            font: {
+                                size: 15px;
+                                weight: 500;
+                            }
+                            &:hover {
+                                color: var(--color-two);
+                            }
+                        }
+                    }
+                }
+                @include medai(mobail) {
+                    position: absolute;
+                    z-index: 10000;
+                    top: 0px;
+                    left: 0px;
+                    height: 0px;
+                    background-color: var(--color-back);
+                    width: 100%;
+                    text-align: center;
+                    border-radius: 0px 0px 30px 30px;
+                    overflow: hidden;
+                    transition: 0.5s height;
+                    li {
+                        margin-right: 0 !important;
+                        margin-bottom:  42px;
+                        display: block !important;
+                        &:first-child{
+                            margin-top: 92px;
+                        }
+                    }
+                }
+            }
+        }
+        .secound {
+            @include medai(mobail){
+                position: relative;
+                z-index: 10000;
+            }
+            i {
+                font-size: 20px;
+                color: var(--color-six);
+                margin-right: 20px;
+                cursor: pointer;
+            }
+            i:last-child {
+                display: none;
+                @include medai(mobail) {
+                    display: inline-block;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include medai (mobail) {
+            flex-direction: column-reverse;
+            align-items: start;
+            padding: 0px 0px 0px 25px;
+        }
+        .first {
+            width: 367px;
+            @include medai(max-medium) {
+                width: 300px;
+            }
+            h1 {
+                color: var(--color-one);
+                font: {
+                    size: 32px;
+                    weight: bold;
+                }
+                line-height: 140%;
+                margin-bottom: 32px;
+            }
+            p:nth-child(2) {
+                font-size: 16px;
+                color: var(--color-three);
+                line-height: 140%;
+                margin-bottom: 32px;
+            }
+            p:nth-child(3) {
+                font: {
+                    size: 24px;
+                    weight: 500;
+                }
+                color: var(--color-two);
+                margin-bottom: 52px;
+            }
+            > div {
+                display: flex;
+                align-items: center;
+                div:first-child {
+                    @include button(111px,51px,#BFBFBF,#595959,16px) ;
+                }
+                div:nth-child(2) {
+                    @include button(165px,59px,var(--color-six),#FFFFFF,16px) ;
+                }
+            }
+        }
+        .secound {
+            background-color: var(--color-two);
+            width: 480px;
+            height: 680px;
+            position: relative;
+            top: -72px;
+            z-index: -1000;
+            @include medai(max-medium) {
+                width: 400px;
+            }
+            @include medai (mobail) {
+                width: 82%;
+                height: 460px;
+                align-self: flex-end;
+            }
+            img {
+                border-style: none;
+                position: absolute;
+                bottom: 52px;
+                left: 50%;
+                transform: translateX(-50%);
+                @include medai(max-medium) {
+                    width: 390px;
+                }
+                @include medai(mobail) {
+                    width: 270px;
+                    height: 360px;
+                }
+            }
+        }
+    }
+}
+
+.featured {
+    padding: 71px 0 50px 0;
+    .container {
+        @include medai(mobail) {
+            height: 1285px;
+        }
+        .first {
+            text-align: center;
+            @include title();
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 374px;
+            gap: 19px;
+            height: 435px;
+            @include medai(mobail) {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3,1fr);
+            }
+            .card {
+                border: 1px solid var(--color-five);
+                position: relative;
+                background-color: var(--color-four);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: 1px var(--color-five) solid;
+                img {
+                    margin: 34px 0px 22px 0px ;
+                }
+                > p {
+                    font: {
+                        size: 16px;
+                        weight: bold;
+                    }
+                    color: var(--color-one);
+                }
+                p:nth-child(3) {
+                    color: var(--color-two);
+                    margin: 18px 0px 26px 0px;
+                }
+                .button {
+                    display: none
+                }
+                &.active {
+                    height: 435px;
+                }
+                &.active .button {
+                    @include button(152px,56px,var(--color-six),#FFFFFF,16px) ;
+                }
+                .sale {
+                    transform: rotate(-90deg);
+                    position: absolute;
+                    left: -16px;
+                    top: 45px;
+                    width: 66px;
+                    height: 32px;
+                    background-color: var(--color-two);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p {
+                        color: #FFFFFF;
+                        font: {
+                            size: 14px;
+                            weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.story {
+    margin: 178px 0px 50px 0px;
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 192px;
+        @include medai (mobail) {
+        grid-template-columns: 1fr;
+        gap: 59px;
+        }
+        .first {
+            width: 450px;
+            height: 450px;
+            background-color: var(--color-two);
+            position: relative;
+            @include medai (max-medium) {
+                width: 300px;
+                height: 425px;
+            }
+            @include medai(mobail) {
+                width: 80%;
+                height: 250px;
+            }
+            div {
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 80px;
+                bottom: 79px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .secound {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @include title();
+            hr {
+                margin: 0 0 19px 0;
+            }
+            p:nth-child(3) {
+                color: var(--color-one);
+                margin-bottom: 36px;
+                font: {
+                    size: 36px;
+                    weight: 500 ;
+                }
+            }
+            p:nth-child(4) {
+                color: var(--color-three);
+                font-size: 16px;
+                margin-bottom: 44px;
+            }
+            .button {
+                @include button(111px,51px,var(--color-six),#FFFFFF,16px)
+            }
+        }
+    }
+}
+
+.products {
+    padding: 70px 0 49px 0 ;
+    .container {
+        @include title();
+        text-align: center;
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2,1fr);
+            @include medai (mobail) {
+                grid-template-columns: repeat(2,1fr);
+            }
+            gap: 40px;
+            .product {
+                position: relative;
+                text-align: center;
+                height: 274px;
+                background-color: var(--color-back);
+                border: 1px solid var(--color-five);
+                img {
+                    margin: 32px 0px 32px 0px ;
+                }
+                p:nth-child(2) {
+                    color: var(--color-one);
+                    margin-bottom: 12px;
+                    font: {
+                        size: 14px;
+                        weight: 500;
+                    }
+                }
+                p:nth-child(3) {
+                    color: var(--color-two);
+                    margin-bottom: 34px;
+                    font: {
+                        size: 14px;
+                        weight: 500;
+                    }
+                }
+                .bag {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 32px;
+                    height: 32px;
+                    background-color: var(--color-six);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    @include medai(mobail) {
+                        width: 28px ;
+                        height: 28px ;
+                    }
+                    i {
+                        font-size: 16px;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.testimonial {
+    padding: 86px 0px 144px 0px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include medai (mobail) {
+            flex-direction: column;
+            align-items: start;
+        }
+        .all {
+            @include medai(mobail) {
+                margin-bottom: 62px;
+            }
+            .alll {
+                display: grid;
+                grid-template-columns: repeat(3,338px);
+                gap: 40px;
+                width: 338px;
+                overflow: hidden;
+                .first {
+                    width: 338px;
+                    transition: transform 0.5s ;
+                    @include medai(max-medium) {
+                        width: 250px;
+                    }
+                    @include medai (mobail) {
+                        width: 100%;
+                    }
+                    .quote {
+                        width: 48px;
+                        height: 40px;
+                        background-color: var(--color-four);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 34px;
+                        i {
+                            font-size: 20px;
+                            color: var(--color-two);
+                        }
+                    }
+                    > p:nth-child(2) {
+                        font-size: 14px;
+                        color: var(--color-three);
+                        line-height: 140%;
+                        margin-bottom: 25px;
+                    }
+                    > p:nth-child(3) {
+                        color: var(--color-one);
+                        font: {
+                            size: 16px;
+                            weight: 500;
+                        }
+                        margin-bottom: 32px;
+                    }
+                    .pr {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 204px;
+                        div p:nth-child(1) {
+                            color: var(--color-one);
+                            margin-bottom: 15px;
+                            font: {
+                                size: 16px;
+                                weight: 500;
+                            }
+                        }
+                        div p:nth-child(2) {
+                            color: var(--color-three);
+                            font-size: 13px;
+                        }
+                        margin-bottom: 56px;
+                    }
+                }
+            }
+            .arrow {
+                display: flex;
+                justify-content: space-between;
+                width: 88px;
+                height: 32px;
+                div {
+                    cursor: pointer;
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var(--color-four);
+                    i {
+                        color: var(--color-two);
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .secound {
+            width: 450px;
+            height: 450px;
+            background-color: var(--color-two);
+            position: relative;
+            @include medai(max-medium) {
+                width: 350px;
+                height: 350px;
+            }
+            @include medai (mobail) {
+                align-self: flex-end;
+                width: 85%;
+                height: 300px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 78px;
+                right: 78px;
+                @include medai (mobail) {
+                    top: 47px;
+                    right: 47px;
+                }
+            }
+        }
+    }
+}
+
+.new {
+    padding: 65px 0px 48px 0px;
+    .container {
+        text-align: center;
+        @include title();
+        .item-grid  {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 24px;
+            @include medai (mobail) {
+                grid-template-columns: repeat(1,1fr);
+            }
+            .item {
+                border: 1px solid var(--color-five);
+                position: relative;
+                height: 371px;
+                padding: 55px 0px 48px 0px;
+                img {
+                    margin-bottom: 20px;
+                }
+                p:nth-child(2) {
+                    color: var(--color-one);
+                    font: {
+                        size: 16px;
+                        weight: bold;
+                    }
+                    margin-bottom: 17px;
+                }
+                p:nth-child(3) {
+                    color: var(--color-two);
+                    font: {
+                        size: 16px ;
+                        weight: bold;
+                    }
+                }
+                .neww {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    width: 63px;
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--color-two);
+                    p {
+                        color: #FFFFFF;
+                        font: {
+                            size: 14px;
+                            weight: 500;
+                        }
+                    }
+                }
+                &.active {
+                    height: 446px;
+                    background-color: var(--color-two);
+                    p:nth-child(3) {
+                        color: var(--color-one);
+                    }
+                    .neww {
+                        background-color: var(--color-six);
+                    }
+                }
+                .button {
+                    display: none
+                }
+                &.active .button {
+                    @include button (152px,56px,var(--color-six),#FFFFFF,16px);
+                    margin: 15px auto 0px auto;
+                }
+            }
+        }
+    }
+}
+
+.newsletter {
+    padding: 72px 0px 47px 0px;
+    .container {
+        padding: 0px 72px 0px 72px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 72px;
+        background-color: var(--color-two);
+        height: 315px;
+        align-items: center;
+        @include medai(max-medium) {
+            gap: 69px;
+        }
+        @include medai(mobail) {
+            grid-template-columns: repeat(1,1fr);
+            gap: 40px;
+            padding: 46px 20px 46px 20px;
+            height: fit-content;
+        }
+        .first {
+            @include medai(mobail){
+                text-align: center;
+            }
+            h2 {
+                color: #2E2E2E;
+                margin-bottom: 40px;
+                font: {
+                    size: 32px;
+                    weight: 500;
+                }
+            }
+            p {
+                font-size: 15px;
+                color: #595959;
+            }
+        }
+        .secound {
+            display: flex;
+            @include medai(mobail) {
+                flex-direction: column;
+            }
+            input {
+                width: 246px;
+                height: 59px;
+                padding-left: 15px;
+                @include medai(max-medium) {
+                    width: 200px;
+                }
+                @include medai(mobail) {
+                    width: 100%;
+                }
+            }
+            .button {
+                @include button(155px,59px,var(--color-six),#FFFFFF,16px);
+                @include medai(max-medium) {
+                    width: 100px;
+                    font-size: 15px;
+                }
+                @include medai(mobail) {
+                    width: 100%;
+                    margin-top: 13px;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    padding: 70px 0px 70px 0px;
+    .container {
+        display: grid;
+        gap: 130px;
+        grid-template-columns: repeat(4,1fr);
+        @include medai(max-medium) {
+            gap: 75px;
+        }
+        @include medai(mobail) {
+            grid-template-columns: repeat(1,1fr);
+            gap: 33px;
+        }
+        ul {
+            list-style: none;
+            height: fit-content;
+            li:nth-child(1) {
+                margin-bottom: 30px;
+                font: {
+                    size: 20px;
+                    weight: 500;
+                } 
+                color: var(--color-one);
+            } 
+            li {
+                margin-bottom: 18px;
+                a {
+                    text-decoration: none;
+                    color: var(--color-three);
+                    font-size: 16px;
+                }
+            }
+        }
+        ul:nth-child(4) {
+            li:not(:first-child) {
+                display: inline-block;
+                i {
+                    font-size: 20px;
+                    margin-right: 22px;
+                    color: var(--color-three);
+                }
+            }
+        }
+    }
+}
+
+.up-button {
+    display: none;
+    bottom: 35px;
+    right: 35px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-two);
+    border-radius: 9px;
+    cursor: pointer;
+    i {
+        font-size: 13px;
+        color: var(--color-four);
+    }
+}

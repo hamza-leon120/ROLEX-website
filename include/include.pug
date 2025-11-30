@@ -1,0 +1,54 @@
+mixin button(one)
+    .button 
+        p= one
+
+mixin card(cla,one,two,three,four)
+    div(class = cla)
+        img(src=one, alt= two)
+        p= three
+        p= four
+        +button("ADD TO CART")
+        .sale 
+            p SALE
+
+
+mixin products(one,two,three,four)
+    div(class = "product")
+        img(src=one, alt= two)
+        p= three
+        p= four
+        .bag 
+            i(class = "fa-solid fa-bag-shopping")
+
+mixin title(one)
+    hr
+    h2= one
+
+mixin item(cla,one,two,three,four)
+    div(class = cla)
+        img(src=one, alt= two)
+        p= three
+        p= four
+        +button("ADD TO CART")
+        .neww 
+            p new
+
+mixin  list(one,two,three,four,five)
+    ul
+        li: = one
+        li: a(href = "#")= two
+        li: a(href = "#")= three
+        li: a(href = "#")= four
+        li: a(href = "#")= five
+
+mixin all(two,three,four,five,six) 
+    .first 
+        .quote 
+            i(class = "fa-solid fa-quote-left")
+        p They are the best watches that one acquires, also they are always with the latest news and trends, with a very comfortable price and especially with the attention you receive, they are always attentive to your questions.
+        p= two
+        .pr 
+            img(src=three, alt=four)
+            div 
+                p= five
+                p= six
